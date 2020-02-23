@@ -34,7 +34,7 @@ public class Dice {
 
 
     public static void main (String [] args){
-    Simulation s = new Simulation(2,20);
+    Simulation s = new Simulation(2,1000000);
     s.printResults();
     }
 

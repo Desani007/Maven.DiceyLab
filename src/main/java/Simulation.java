@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -25,32 +27,40 @@ public class Simulation {
      }
 
      public void printResults (){
-         ArrayList<Integer> ints = new ArrayList<Integer>();
+         runSimualtion();
+         ArrayList<Integer> value = new ArrayList<Integer>();
+         ArrayList<Integer> key = new ArrayList<Integer>();
          System.out.println("***");
          System.out.println("Simulation of 2 dice tossed for 1000000 times.");
          System.out.println("***");
 
          for (Map.Entry<Integer, Integer> i : Bins.numberStorage.entrySet()) {
-             i.getKey();
-             i.getValue();
-             ints.add(i.getKey());
+             String one  ="**";
+             String two =" *****";
+             String three ="********";
+             String four = "***********";
+             String five ="*************";
+              float work =i.getValue().floatValue()/howManyTimes;
 
-             for ( int g =bins.one; g<bins.two; g++){
-                 System.out.println(i.getKey());
-             }
+             NumberFormat formatter = new DecimalFormat("##.00");
+               System.out.println(  i.getKey()+" :" + "      "+  i.getValue()+":"+ "   "+ formatter.format(work));
+
+
+
+
+
+
          }
 
-         Collections.sort(ints);
-
-        for ( int f =0 ; f<ints.size();f++){
-
-             System.out.println(ints.get(f));
 
 
 
-            }
 
-         runSimualtion();
+
+
+
+
+
 
 
 
