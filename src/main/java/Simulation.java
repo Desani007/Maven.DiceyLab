@@ -35,15 +35,17 @@ public class Simulation {
          System.out.println("***");
 
          for (Map.Entry<Integer, Integer> i : Bins.numberStorage.entrySet()) {
-             String one  ="**";
-             String two =" *****";
-             String three ="********";
-             String four = "***********";
-             String five ="*************";
-              float work =i.getValue().floatValue()/howManyTimes;
 
-             NumberFormat formatter = new DecimalFormat("##.00");
-               System.out.println(  i.getKey()+" :" + "      "+  i.getValue()+":"+ "   "+ formatter.format(work));
+              float work =i.getValue().floatValue()/howManyTimes;
+              String start="";
+              float pleaseWork = work*100;
+
+              for ( int f = 0; f < pleaseWork; f++){
+                  start+="*";
+              }
+
+
+             System.out.println(String.format("%2d : %10d:  %.2f  %s",i.getKey(),i.getValue(),work,start));
 
 
 
